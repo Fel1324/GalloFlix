@@ -15,7 +15,28 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        List<Genre> genres = new()
+        {
+            new Genre()
+            {
+                Id = 1,
+                Name = "Ação"
+            },
+            new Genre()
+            {
+                Id = 2,
+                Name = "Terror"
+            }
+        };
+        genres.Add(
+            new Genre()
+            {
+                Id = 3,
+                Name = "Drama"
+            }
+        );
+
+        return View(genres);
     }
 
     public IActionResult Privacy()
